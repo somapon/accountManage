@@ -49,7 +49,6 @@
 <script src="<?= base_url() ?>resources/bootstrap/assets/js/vendor-all.min.js"></script>
 <script src="<?= base_url() ?>resources/bootstrap/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
 <script src="<?= base_url() ?>resources/bootstrap/assets/js/pcoded.min.js"></script>
-<script src="<?= base_url() ?>resources/bootstrap/assets/js/menu-setting.min.js"></script>
 
 <script src="<?= base_url() ?>resources/bootstrap/assets/plugins/amchart/js/amcharts.js"></script>
 <script src="<?= base_url() ?>resources/bootstrap/assets/plugins/amchart/js/gauge.js"></script>

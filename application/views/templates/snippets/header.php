@@ -24,6 +24,8 @@
 <link rel="stylesheet" href="<?= base_url() ?>resources/bootstrap/assets/plugins/animation/css/animate.min.css">
 
 <link rel="stylesheet" href="<?= base_url() ?>resources/bootstrap/assets/css/style.css">
+<!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">-->
+
 </head>
 <body>
 
@@ -33,7 +35,7 @@
 </div>
 </div>
 
-<header class="navbar pcoded-header navbar-expand-lg navbar-light">
+<header class="navbar pcoded-header navbar-expand-lg navbar-light header-dark">
 <div class="m-header">
 <a class="mobile-menu" id="mobile-collapse1" href="#!"><span></span></a>
 <a href="index.html" class="b-brand">
@@ -143,6 +145,8 @@
 <li><a href="#!" class="dropdown-item"><i class="feather icon-user"></i> Profile</a></li>
 <li><a href="message.html" class="dropdown-item"><i class="feather icon-mail"></i> My Messages</a></li>
 <li><a href="auth-signin.html" class="dropdown-item"><i class="feather icon-lock"></i> Lock Screen</a></li>
+<li><a href="<?= site_url('Auth/logout'); ?>" class="dropdown-item"><i class="feather icon-lock"></i> Logout</a></li>
+
 </ul>
 </div>
 </div>
