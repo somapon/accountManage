@@ -41,53 +41,40 @@ class Menu
     public function buildMenu($parent, $menu, $sub = NULL)
     {
 
-        $html = "";
+        $html = '';
+		
 
-        if (isset($menu['parents'][$parent])) {
+			
+			if (isset($menu['parents'][$parent])) {
             
             foreach ($menu['parents'][$parent] as $itemId) {
-                $result = $this->active_menu_id($menu['items'][$itemId]->id);
-                if ($result) {
-                    $active = 'active';
-                } else {
-                    $active = '';
-                }
+				
+					if (!isset($menu['parents'][$itemId]) && $menu['items'][$itemId]->parent_id !=0) {
 
-                if (!isset($menu['parents'][$itemId]) && $menu['items'][$itemId]->parent_id !=0) {
-
-					$html .= "<li><a href='" . site_url() . '/' . $menu['items'][$itemId]->link . "' class='slide-item'><i class='fa fa-arrows'></i>" . $menu['items'][$itemId]->title . "</a></li>";
-                }
-
-                if (isset($menu['parents'][$itemId])) { 
+						$html .= '<li class=""><a href="layout-horizontal.html" class="" target="_blank">' . $menu['items'][$itemId]->title . '</a></li>';
+					}
 					
-					if($menu['items'][$itemId]->parent_id==0){
-						$icon = "<i class='" . $menu['items'][$itemId]->icon . " sidemenu_icons'></i>";
-					
-					}   
-					$html .= "<div class='input-group'>";
-					if($menu['items'][$itemId]->parent_id !=0){
-						$html .= "<span class='addon-subsubmenu'>" . $icon . "</span>";
-					
-					}else{
+					if (isset($menu['parents'][$itemId])) {
 						
-						$html .= "<span class='input-group-addon'>" . $icon . "</span>";
-					}  
+						if($menu['items'][$itemId]->parent_id==0){
+							
+							$icon = "<i class='" . $menu['items'][$itemId]->icon . " feather'></i>";
 					
+						}
+						
+						$html .= '<li data-username="Vertical Horizontal Box Layout RTL fixed static collapse menu color icon dark" class="nav-item pcoded-hasmenu">';
+						$html .= '<a href="#!" class="nav-link"><span class="pcoded-micon">' . $icon . '</span><span class="pcoded-mtext">' . $menu['items'][$itemId]->title . '</span></a>';
+						$html .= '<ul class="pcoded-submenu">';
+						
+						$html .= self::buildMenu($itemId, $menu, $menu['items'][$itemId]->title);
+						
+						$html .= '</ul>';
+						$html .= '</li>';
+					
+					}
+				}
+			}
 
-					$html .= "<div class='slide submenu' style='width: 75%;'>";
-					$html .= "<a class='side-menu__item' data-toggle='slide' href='#' style='display:flex !important;'>";
-					$html .= "<span class='side-menu__label'>" . $menu['items'][$itemId]->title . "</span>";
-					$html .= "<i class='angle fa fa-angle-down'></i></a>"; 
-					$html .= "<ul class='slide-menu submenu-list'>"; 
-					$html .= self::buildMenu($itemId, $menu, $menu['items'][$itemId]->title);
-					$html .= "</ul>";
-					$html .= "</div>";
-
-					$html .= "</div>";
-                }
-            }
-            
-        }
         return $html;
     }
 
