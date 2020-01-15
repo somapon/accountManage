@@ -66,5 +66,11 @@
 <script src="<?= base_url() ?>resources/bootstrap/assets/plugins/flot/js/jquery.flot.tooltip.min.js"></script>
 
 <script src="<?= base_url() ?>resources/bootstrap/assets/js/pages/dashboard-analytics.js"></script>
+<script src="<?= base_url() ?>resources/bootstrap/assets/plugins/data-tables/js/datatables.min.js"></script>
+<script src="<?= base_url() ?>resources/bootstrap/assets/plugins/data-tables/js/tbl-datatable-custom.js"></script>
+
+<script src="<?= base_url() ?>resources/bootstrap/assets/js/dropify.js"></script>
+<script src="<?= base_url() ?>resources/bootstrap/assets/js/dropify-demo.js"></script>
+
 </body>
 </html>

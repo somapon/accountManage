@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 16, 2019 at 05:09 PM
+-- Generation Time: Jan 15, 2020 at 12:27 PM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.11
 
@@ -19,95 +19,8 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `lawyer.db`
+-- Database: `accountmanage.db`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `casesub_subcategory`
---
-
-CREATE TABLE `casesub_subcategory` (
-  `id` tinyint(3) NOT NULL,
-  `case_subcategory_id` tinyint(3) NOT NULL,
-  `subsubcat_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `casesub_subcategory`
---
-
-INSERT INTO `casesub_subcategory` (`id`, `case_subcategory_id`, `subsubcat_name`) VALUES
-(1, 1, 'Revision'),
-(2, 1, 'Appeal'),
-(3, 1, 'Miscellaneous'),
-(4, 2, 'Revision'),
-(5, 2, 'Appeal'),
-(6, 2, 'Miscellaneous'),
-(7, 2, 'Leave to Appeal'),
-(8, 3, 'Freedom Fighter'),
-(9, 3, 'Environment'),
-(10, 3, 'Services');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `case_subcategory`
---
-
-CREATE TABLE `case_subcategory` (
-  `id` tinyint(3) NOT NULL,
-  `subcat_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `case_subcategory`
---
-
-INSERT INTO `case_subcategory` (`id`, `subcat_name`) VALUES
-(1, 'Civil'),
-(2, 'Criminal'),
-(3, 'Writ');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `court_type`
---
-
-CREATE TABLE `court_type` (
-  `id` tinyint(3) NOT NULL,
-  `court_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `court_type`
---
-
-INSERT INTO `court_type` (`id`, `court_name`) VALUES
-(1, 'High Court'),
-(2, 'Appeal Division'),
-(3, 'District Court');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `gender`
---
-
-CREATE TABLE `gender` (
-  `id` tinyint(3) NOT NULL,
-  `title` varchar(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `gender`
---
-
-INSERT INTO `gender` (`id`, `title`) VALUES
-(1, 'Male'),
-(2, 'Female');
 
 -- --------------------------------------------------------
 
@@ -149,64 +62,6 @@ CREATE TABLE `login_attempts` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `lwy_files`
---
-
-CREATE TABLE `lwy_files` (
-  `id` int(11) NOT NULL,
-  `lwy_file_info_id` int(11) NOT NULL,
-  `image` varchar(200) NOT NULL,
-  `created_at` varchar(20) NOT NULL,
-  `updated_at` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `lwy_files`
---
-
-INSERT INTO `lwy_files` (`id`, `lwy_file_info_id`, `image`, `created_at`, `updated_at`) VALUES
-(1, 1, 'catalog/demo/compaq_presario.jpg', '', ''),
-(2, 1, 'catalog/demo/compaq_presario.jpg', '', ''),
-(3, 0, 'catalog/demo/compaq_presario.jpg', '', ''),
-(4, 0, 'catalog/demo/compaq_presario.jpg', '', ''),
-(5, 0, 'C:\\fakepath\\Chrysanthemum.jpg', '', ''),
-(6, 0, 'C:\\fakepath\\Koala.jpg', '', '');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `lwy_file_info`
---
-
-CREATE TABLE `lwy_file_info` (
-  `id` int(11) NOT NULL,
-  `casetype_id` tinyint(3) NOT NULL,
-  `casesub_subcategory_id` tinyint(3) NOT NULL,
-  `courttype_id` tinyint(3) NOT NULL,
-  `file_name` varchar(250) NOT NULL,
-  `party_name` varchar(150) NOT NULL,
-  `party_district` varchar(50) NOT NULL,
-  `case_date` varchar(30) NOT NULL,
-  `case_no` varchar(20) NOT NULL,
-  `image` varchar(100) NOT NULL,
-  `status_id` tinyint(2) NOT NULL DEFAULT 1,
-  `created_at` varchar(20) NOT NULL,
-  `updated_at` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `lwy_file_info`
---
-
-INSERT INTO `lwy_file_info` (`id`, `casetype_id`, `casesub_subcategory_id`, `courttype_id`, `file_name`, `party_name`, `party_district`, `case_date`, `case_no`, `image`, `status_id`, `created_at`, `updated_at`) VALUES
-(1, 2, 4, 1, 'New file name', 'New Party', 'Kushtia', '2019-12-31', '1250', '201912140934401.docx', 1, '2019-12-14 05:58:16a', '2019-12-14 09:59:39a'),
-(3, 3, 9, 2, 'asdasdasd', 'Jata', 'Kushtia', '2019-12-12', '1213', '2019121410002278.docx', 1, '2019-12-14 10:00:22a', '2019-12-14 10:00:49a'),
-(4, 3, 9, 3, 'asdasdasd', 'Jata', 'Kushtia', '2019-12-12', '1213', '2019121410002278.docx', 1, '2019-12-14 10:00:22a', '2019-12-14 10:00:49a'),
-(5, 2, 4, 2, 'New file name', 'New Party', 'Kushtia', '2019-12-31', '1250', '201912140934401.docx', 1, '2019-12-14 05:58:16a', '2019-12-14 09:59:39a');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `menu_list`
 --
 
@@ -228,31 +83,17 @@ CREATE TABLE `menu_list` (
 --
 
 INSERT INTO `menu_list` (`id`, `group_id`, `menu_order`, `parent_id`, `title`, `link`, `icon`, `status`, `create_at`, `update_at`) VALUES
-(1, '5,6', 1, 0, 'Authentication', '#', 'fa fa-key', 'Active', '2017-09-12 23:00:00', NULL),
-(2, '5,6', 2, 0, 'File Upload', '#', 'fa fa-file-o', 'Active', '2017-12-21 15:24:34', '0000-00-00 00:00:00'),
+(1, '5,6', 1, 0, 'Authentication', '#', 'feather icon-lock', 'Active', '2017-09-12 23:00:00', NULL),
+(2, '5,6', 2, 0, 'Vendors', '#', 'feather icon-user-minus', 'Active', '2017-12-21 15:24:34', '0000-00-00 00:00:00'),
 (3, '5,6', 2, 1, 'Admin Group', 'Auth/group', 'icon-user', 'Active', '2017-09-15 10:51:31', NULL),
 (4, '5,6', 1, 1, 'Admin', 'Auth/user', 'icon-user', 'Active', '2017-09-15 16:49:52', NULL),
-(5, '5', 1, 2, 'File List', 'FileUpload/file_list', 'fa fa-file-o', 'Active', '2017-09-15 16:49:52', NULL),
-(6, '5', 1, 2, 'Search File', 'AjaxSearch/search_file', 'fa fa-file-o', 'Active', '2019-12-14 16:49:52', NULL);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `qhub_status`
---
-
-CREATE TABLE `qhub_status` (
-  `id` tinyint(3) NOT NULL,
-  `title` varchar(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `qhub_status`
---
-
-INSERT INTO `qhub_status` (`id`, `title`) VALUES
-(1, 'Enable'),
-(2, 'Disable');
+(5, '5', 1, 2, 'Vendor List', 'Vendor/vendor_list', 'fa fa-file-o', 'Active', '2017-09-15 16:49:52', NULL),
+(6, '5', 1, 2, 'New Vendor', 'Vendor/add_vendor', 'fa fa-file-o', 'Active', '2019-12-14 16:49:52', NULL),
+(7, '5,6', 3, 0, 'Clients', '#', 'feather icon-user-plus', 'Active', '2020-01-15 15:24:34', '0000-00-00 00:00:00'),
+(8, '5', 1, 7, 'Client List', 'Clients/client_list', 'fa fa-file-o', 'Active', '2020-01-15 16:49:52', NULL),
+(9, '5', 1, 7, 'New Client', 'Clients/add_client', 'fa fa-file-o', 'Active', '2020-01-15 16:49:52', NULL),
+(10, '5,6', 4, 0, 'Settings', '#', 'feather icon-settings', 'Active', '2020-01-15 15:24:34', '0000-00-00 00:00:00'),
+(11, '5', 1, 10, 'Account Head', 'Settings/account_head_list', 'fa fa-file-o', 'Active', '2020-01-15 16:49:52', NULL);
 
 -- --------------------------------------------------------
 
@@ -287,7 +128,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `group_id`, `ip_address`, `username`, `password`, `salt`, `email`, `activation_code`, `forgotten_password_code`, `forgotten_password_time`, `remember_code`, `created_on`, `last_login`, `active`, `first_name`, `last_name`, `phone`, `create_by`, `image`) VALUES
-(78, 5, '103.15.141.22', 'faruq@quizhub.com', '$2y$08$ubAkdvlyuVOySSc6EsYia.HRI5gDxEDFyJwHtP/PjfQ3lBAmhQftu', NULL, 'faruq@quizhub.com', NULL, NULL, NULL, NULL, 1565368160, 1576460292, 1, 'Faruqe', 'Ahammad', '+0195221826', 74, '2019100609115478.jpeg'),
+(78, 5, '103.15.141.22', 'faruq@quizhub.com', '$2y$08$ubAkdvlyuVOySSc6EsYia.HRI5gDxEDFyJwHtP/PjfQ3lBAmhQftu', NULL, 'faruq@quizhub.com', NULL, NULL, NULL, NULL, 1565368160, 1579074934, 1, 'Faruqe', 'Ahammad', '+0195221826', 74, '2019100609115478.jpeg'),
 (81, 5, '118.100.129.26', 'faruqe2@quizhub.com', '$2y$08$Csg8qeNznSK8plcQsngNl.XuTasYXIuDdOGiZ5jfomxiAMrTrr7WC', NULL, 'faruqe2@quizhub.com', NULL, NULL, NULL, NULL, 1567630557, 1570286859, 1, 'Faruqe', 'Ahammad 2', '01952218262', 78, NULL),
 (94, 5, '103.210.18.52', 'admin@quizhub.com', '$2y$08$IIIVaXUNnVhLJYX95jmYGuCL9s4pt3LIseCqIa6N9DoXQy/OS07L2', NULL, 'admin@quizhub.com', NULL, NULL, NULL, NULL, 1570736895, 1575396918, 1, 'Admin', 'Admin', '', 78, NULL),
 (95, 5, '60.53.65.63', 'faruq2@quizhub.com', '$2y$08$NO/1IlCQs/G6mnV3.9OVwebMvunEzKEeGDMtenKjCw.2q1UIEjS8G', NULL, 'faruq2@quizhub.com', NULL, NULL, NULL, NULL, 1570809689, 1575764894, 1, 'Faruqe', 'Ahammad2', '01234564789', 78, NULL),
@@ -1980,50 +1821,87 @@ INSERT INTO `user_login_attempt` (`id`, `ip_address`, `attempt_name`, `login_sta
 (519, '::1', 'Admin Admin', 'Success', '12:19:58 AM', '2019-06-17', 'Monday'),
 (520, '::1', 'Admin Admin', 'Success', '12:24:14 AM', '2019-06-17', 'Monday');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `_007_account_head`
+--
+
+CREATE TABLE `_007_account_head` (
+  `id` int(11) NOT NULL,
+  `head_title` varchar(50) NOT NULL,
+  `created_at` varchar(20) NOT NULL,
+  `updated_at` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `_007_account_head`
+--
+
+INSERT INTO `_007_account_head` (`id`, `head_title`, `created_at`, `updated_at`) VALUES
+(1, 'Expense1', '2020-01-15 10:36:50a', '2020-01-15 10:48:56a'),
+(2, 'Income', '2020-01-15', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `_007_clientinfo`
+--
+
+CREATE TABLE `_007_clientinfo` (
+  `id` int(11) NOT NULL,
+  `ccodeNo` varchar(10) NOT NULL,
+  `cname` varchar(100) NOT NULL,
+  `cphone` varchar(20) NOT NULL,
+  `cemail` varchar(50) NOT NULL,
+  `caddress` tinytext NOT NULL,
+  `image` varchar(100) NOT NULL,
+  `created_at` varchar(20) NOT NULL,
+  `updated_at` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `_007_clientinfo`
+--
+
+INSERT INTO `_007_clientinfo` (`id`, `ccodeNo`, `cname`, `cphone`, `cemail`, `caddress`, `image`, `created_at`, `updated_at`) VALUES
+(2, 'v-124', 'Somapon', '01712488651', 'sombor@gmail.com', 'Bheramara', '2020011505465978.jpg', '2020-01-15 05:46:59a', ''),
+(3, 'c-1236', 'Sukur', '01712488651', 'sukur@gmail.com', 'Bheramara', '202001150938523.jpg', '2020-01-15 09:27:24a', '2020-01-15 09:38:52a');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `_007_vendorinfo`
+--
+
+CREATE TABLE `_007_vendorinfo` (
+  `id` int(11) NOT NULL,
+  `vcodeNo` varchar(10) NOT NULL,
+  `vname` varchar(100) NOT NULL,
+  `vphone` varchar(20) NOT NULL,
+  `vemail` varchar(50) NOT NULL,
+  `vaddress` tinytext NOT NULL,
+  `image` varchar(100) NOT NULL,
+  `created_at` varchar(20) NOT NULL,
+  `updated_at` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `_007_vendorinfo`
+--
+
+INSERT INTO `_007_vendorinfo` (`id`, `vcodeNo`, `vname`, `vphone`, `vemail`, `vaddress`, `image`, `created_at`, `updated_at`) VALUES
+(1, 'v-1239', 'Sombor', '01712488651', 'sombor@gmail.com', 'Bheramara', '202001150613281.jpg', '2020-01-15 06:13:28a', '2020-01-15 09:09:42a'),
+(2, 'v-124', 'Somapon', '01712488651', 'sombor@gmail.com', 'Bheramara', '2020011505465978.jpg', '2020-01-15 05:46:59a', '');
+
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `casesub_subcategory`
---
-ALTER TABLE `casesub_subcategory`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `case_subcategory`
---
-ALTER TABLE `case_subcategory`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `court_type`
---
-ALTER TABLE `court_type`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `gender`
---
-ALTER TABLE `gender`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `groups`
 --
 ALTER TABLE `groups`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `lwy_files`
---
-ALTER TABLE `lwy_files`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `lwy_file_info`
---
-ALTER TABLE `lwy_file_info`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -2057,32 +1935,26 @@ ALTER TABLE `user_login_attempt`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `_007_account_head`
+--
+ALTER TABLE `_007_account_head`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `_007_clientinfo`
+--
+ALTER TABLE `_007_clientinfo`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `_007_vendorinfo`
+--
+ALTER TABLE `_007_vendorinfo`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
-
---
--- AUTO_INCREMENT for table `casesub_subcategory`
---
-ALTER TABLE `casesub_subcategory`
-  MODIFY `id` tinyint(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
-
---
--- AUTO_INCREMENT for table `case_subcategory`
---
-ALTER TABLE `case_subcategory`
-  MODIFY `id` tinyint(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
---
--- AUTO_INCREMENT for table `court_type`
---
-ALTER TABLE `court_type`
-  MODIFY `id` tinyint(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT for table `gender`
---
-ALTER TABLE `gender`
-  MODIFY `id` tinyint(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `groups`
@@ -2091,22 +1963,10 @@ ALTER TABLE `groups`
   MODIFY `id` mediumint(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT for table `lwy_files`
---
-ALTER TABLE `lwy_files`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
---
--- AUTO_INCREMENT for table `lwy_file_info`
---
-ALTER TABLE `lwy_file_info`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
 -- AUTO_INCREMENT for table `menu_list`
 --
 ALTER TABLE `menu_list`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=175;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=180;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -2131,6 +1991,24 @@ ALTER TABLE `user_access_menus`
 --
 ALTER TABLE `user_login_attempt`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=521;
+
+--
+-- AUTO_INCREMENT for table `_007_account_head`
+--
+ALTER TABLE `_007_account_head`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `_007_clientinfo`
+--
+ALTER TABLE `_007_clientinfo`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `_007_vendorinfo`
+--
+ALTER TABLE `_007_vendorinfo`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -13,30 +13,7 @@ class Option_model extends CI_Model
 		return $result->result();
 	}
 	
-	public function getStatus(){
-		
-		$this->db->select('id, title');
-        $query = $this->db->get('qhub_status');
-        $data[''] = 'Select Status';
-        foreach ($query->result_array() as $row) {
-            $data[$row['id']] = ucfirst($row['title']);
-        }
 
-        return $data;
-	}
-	
-	public function getCaseType(){
-		
-		$this->db->select('id, subcat_name title');
-        $query = $this->db->get('case_subcategory');
-        $data[''] = 'Select Category';
-        foreach ($query->result_array() as $row) {
-            $data[$row['id']] = ucfirst($row['title']);
-        }
-
-        return $data;
-	}
-	
 	public function getCaseTypeCat($id){
 		
 		$this->db->select('id, subsubcat_name title');
@@ -51,34 +28,13 @@ class Option_model extends CI_Model
         return $data;
 	}
 	
-	public function getCaseCategory(){
-		
-		$this->db->select('id, subsubcat_name title');
-        $query = $this->db->get('casesub_subcategory');
-        $data[''] = 'Select Category';
-        foreach ($query->result_array() as $row) {
-            $data[$row['id']] = ucfirst($row['title']);
-        }
 
-        return $data;
-	}
 	
 	public function getSubCategory($casetype_id = '')
     {
         return $this->db->get_where('casesub_subcategory', array('case_subcategory_id' => $casetype_id))->result();
     }
 	
-	public function getCourtType(){
-		
-		$this->db->select('id, court_name title');
-        $query = $this->db->get('court_type');
-        $data[''] = 'Select Court';
-        foreach ($query->result_array() as $row) {
-            $data[$row['id']] = ucfirst($row['title']);
-        }
-
-        return $data;
-	}
 	
 	//============AJAX SEARCH=====================
 	

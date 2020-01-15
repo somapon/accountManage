@@ -51,7 +51,7 @@ class Menu
 				
 					if (!isset($menu['parents'][$itemId]) && $menu['items'][$itemId]->parent_id !=0) {
 
-						$html .= '<li class=""><a href="layout-horizontal.html" class="" target="_blank">' . $menu['items'][$itemId]->title . '</a></li>';
+						$html .= '<li class=""><a href="' . site_url() . '/' . $menu['items'][$itemId]->link . '" class="">' . $menu['items'][$itemId]->title . '</a></li>';
 					}
 					
 					if (isset($menu['parents'][$itemId])) {
