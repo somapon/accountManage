@@ -26,6 +26,7 @@
 		<link rel="stylesheet" href="<?= base_url() ?>resources/bootstrap/assets/plugins/data-tables/css/datatables.min.css">
 		<!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">-->
 		<link rel="stylesheet" href="<?= base_url() ?>resources/bootstrap/assets/css/dropify.css">
+		<link rel="stylesheet" href="<?= base_url() ?>resources/bootstrap/assets/plugins/bootstrap-datetimepicker/css/bootstrap-datepicker3.min.css">
 
 	</head>
 	<body>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 15, 2020 at 12:27 PM
+-- Generation Time: Jan 15, 2020 at 08:09 PM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.11
 
@@ -93,7 +93,10 @@ INSERT INTO `menu_list` (`id`, `group_id`, `menu_order`, `parent_id`, `title`, `
 (8, '5', 1, 7, 'Client List', 'Clients/client_list', 'fa fa-file-o', 'Active', '2020-01-15 16:49:52', NULL),
 (9, '5', 1, 7, 'New Client', 'Clients/add_client', 'fa fa-file-o', 'Active', '2020-01-15 16:49:52', NULL),
 (10, '5,6', 4, 0, 'Settings', '#', 'feather icon-settings', 'Active', '2020-01-15 15:24:34', '0000-00-00 00:00:00'),
-(11, '5', 1, 10, 'Account Head', 'Settings/account_head_list', 'fa fa-file-o', 'Active', '2020-01-15 16:49:52', NULL);
+(11, '5', 1, 10, 'Account Head', 'Settings/account_head_list', 'fa fa-file-o', 'Active', '2020-01-15 16:49:52', NULL),
+(12, '5,6', 5, 0, 'Received', '#', 'feather icon-pocket', 'Active', '2020-01-15 15:24:34', '0000-00-00 00:00:00'),
+(13, '5', 1, 12, 'Received List', 'Received/received_list', 'fa fa-file-o', 'Active', '2020-01-15 16:49:52', NULL),
+(182, '5', 2, 12, 'Received Info.', 'Received/add_received', 'fa fa-file-o', 'Active', '2020-01-15 16:49:52', NULL);
 
 -- --------------------------------------------------------
 
@@ -128,7 +131,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `group_id`, `ip_address`, `username`, `password`, `salt`, `email`, `activation_code`, `forgotten_password_code`, `forgotten_password_time`, `remember_code`, `created_on`, `last_login`, `active`, `first_name`, `last_name`, `phone`, `create_by`, `image`) VALUES
-(78, 5, '103.15.141.22', 'faruq@quizhub.com', '$2y$08$ubAkdvlyuVOySSc6EsYia.HRI5gDxEDFyJwHtP/PjfQ3lBAmhQftu', NULL, 'faruq@quizhub.com', NULL, NULL, NULL, NULL, 1565368160, 1579074934, 1, 'Faruqe', 'Ahammad', '+0195221826', 74, '2019100609115478.jpeg'),
+(78, 5, '103.15.141.22', 'faruq@quizhub.com', '$2y$08$ubAkdvlyuVOySSc6EsYia.HRI5gDxEDFyJwHtP/PjfQ3lBAmhQftu', NULL, 'faruq@quizhub.com', NULL, NULL, NULL, NULL, 1565368160, 1579105784, 1, 'Faruqe', 'Ahammad', '+0195221826', 74, '2019100609115478.jpeg'),
 (81, 5, '118.100.129.26', 'faruqe2@quizhub.com', '$2y$08$Csg8qeNznSK8plcQsngNl.XuTasYXIuDdOGiZ5jfomxiAMrTrr7WC', NULL, 'faruqe2@quizhub.com', NULL, NULL, NULL, NULL, 1567630557, 1570286859, 1, 'Faruqe', 'Ahammad 2', '01952218262', 78, NULL),
 (94, 5, '103.210.18.52', 'admin@quizhub.com', '$2y$08$IIIVaXUNnVhLJYX95jmYGuCL9s4pt3LIseCqIa6N9DoXQy/OS07L2', NULL, 'admin@quizhub.com', NULL, NULL, NULL, NULL, 1570736895, 1575396918, 1, 'Admin', 'Admin', '', 78, NULL),
 (95, 5, '60.53.65.63', 'faruq2@quizhub.com', '$2y$08$NO/1IlCQs/G6mnV3.9OVwebMvunEzKEeGDMtenKjCw.2q1UIEjS8G', NULL, 'faruq2@quizhub.com', NULL, NULL, NULL, NULL, 1570809689, 1575764894, 1, 'Faruqe', 'Ahammad2', '01234564789', 78, NULL),
@@ -1966,7 +1969,7 @@ ALTER TABLE `groups`
 -- AUTO_INCREMENT for table `menu_list`
 --
 ALTER TABLE `menu_list`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=180;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=183;
 
 --
 -- AUTO_INCREMENT for table `users`

@@ -1,3 +1,14 @@
+<style>
+        .datepicker>.datepicker-days {
+            display: block;
+        }
+
+        ol.linenums {
+            margin: 0 0 0 -8px;
+        }
+    </style>
+
+
 <section class="pcoded-main-container">
 	<div class="pcoded-wrapper">
 		<div class="pcoded-content">
@@ -22,27 +33,6 @@
 												<div class="col-md-3 col-xs-12 invoice-client-info">
 													<img src="<?= base_url();?>upload/company_logo.jpg" class="m-b-10" alt="">
 												</div>
-												<!--<div class="col-md-6 col-sm-6">
-													<h6>SURBANA JURONG INFRASTRUCTURE PTE LTD.</h6>
-													<table class="table table-responsive invoice-table invoice-order table-borderless">
-														<tbody>
-															<tr>
-																<th>Date :</th>
-																<td>November 14</td>
-															</tr>
-															<tr>
-																<th>Status :</th>
-																<td>
-																	<span class="label label-warning">Pending</span>
-																</td>
-															</tr>
-															<tr>
-																<th>Id :</th>
-																<td>#146859</td>
-															</tr>
-														</tbody>
-													</table>
-												</div>-->
 												
 												<div class="col-md-6 col-6 text-center m-b-10">
 													<h5><b>SURBANA JURONG INFRASTRUCTURE PTE LTD.</b></h5>
@@ -60,80 +50,80 @@
 													<div class="card-body">
 														<div class="row">
 															
-																<div class="col-lg-12 col-md-12">
-																	<div class="row">
-																		<div class="form-group col-md-3"><label>Client Name:<span
-																							style="color:red;">*</span></label></div>
-																		<div class="form-group col-md-9">
-																			<?= form_input(array('name' => 'vname', 'value' => set_value('vname'), 'class' => 'form-control', 'placeholder' => 'Vendor Name', 'required' => 'required')); ?>
-																			<span class="error"> <?php echo form_error('vname'); ?></span>
-																		</div>
-																		
+															<div class="col-lg-12 col-md-12">
+																<div class="row">
+																	<div class="form-group col-md-3"><label>Client Name:<span
+																						style="color:red;">*</span></label></div>
+																	<div class="form-group col-md-9">
+																		<?= form_input(array('name' => 'vname', 'value' => set_value('vname'), 'class' => 'form-control', 'placeholder' => 'Vendor Name', 'required' => 'required')); ?>
+																		<span class="error"> <?php echo form_error('vname'); ?></span>
 																	</div>
+																	
 																</div>
+															</div>
 
-																<div class="col-lg-12 col-md-12">
-																	<div class="row">
-																		<div class="form-group col-md-3"><label>Invoice Number:<span
-																							style="color:red;">*</span></label></div>
-																		<div class="form-group col-md-4">
-																			<?= form_input(array('name' => 'vphone', 'value' => set_value('vphone'), 'class' => 'form-control', 'placeholder' => 'Phone', 'required' => 'required')); ?>
-																			<span class="error"> <?php echo form_error('vphone'); ?></span>
-																		</div>
+															<div class="col-lg-12 col-md-12">
+																<div class="row">
+																	<div class="form-group col-md-3"><label>Invoice Number:<span
+																						style="color:red;">*</span></label></div>
+																	<div class="form-group col-md-4">
+																		<?= form_input(array('name' => 'vphone', 'value' => set_value('vphone'), 'class' => 'form-control', 'placeholder' => 'Phone', 'required' => 'required')); ?>
+																		<span class="error"> <?php echo form_error('vphone'); ?></span>
 																	</div>
 																</div>
-																<div class="col-lg-12 col-md-12">
-																	<div class="row">
-																		<div class="form-group col-md-3"><label>EBO Vendor Code:</label></div>
-																		<div class="form-group col-md-4">
-																			<?= form_input(array('name' => 'vemail', 'value' => set_value('vemail'), 'class' => 'form-control', 'placeholder' => 'Email')); ?>
-																			<span class="error"> <?php echo form_error('vemail'); ?></span>
-																		</div>
+															</div>
+															<div class="col-lg-12 col-md-12">
+																<div class="row">
+																	<div class="form-group col-md-3"><label>EBO Vendor Code:</label></div>
+																	<div class="form-group col-md-4">
+																		<?= form_input(array('name' => 'vemail', 'value' => set_value('vemail'), 'class' => 'form-control', 'placeholder' => 'Email')); ?>
+																		<span class="error"> <?php echo form_error('vemail'); ?></span>
 																	</div>
 																</div>
-																<div class="col-lg-12 col-md-12">
-																	<div class="row">
-																		<div class="form-group col-md-3"><label>Description:</label></div>
-																		<div class="form-group col-md-9">
-																			<?= form_input(array('name' => 'vemail', 'value' => set_value('vemail'), 'class' => 'form-control', 'placeholder' => 'Email')); ?>
-																			<span class="error"> <?php echo form_error('vemail'); ?></span>
-																		</div>
+															</div>
+															<div class="col-lg-12 col-md-12">
+																<div class="row">
+																	<div class="form-group col-md-3"><label>Description:</label></div>
+																	<div class="form-group col-md-9">
+																		<?= form_input(array('name' => 'vemail', 'value' => set_value('vemail'), 'class' => 'form-control', 'placeholder' => 'Email')); ?>
+																		<span class="error"> <?php echo form_error('vemail'); ?></span>
 																	</div>
 																</div>
-																<div class="col-lg-12 col-md-12">
-																	<div class="row">
-																		<div class="form-group col-md-3"><label>Name of Project:</label></div>
-																		<div class="form-group col-md-9">
-																			<?= form_input(array('name' => 'vemail', 'value' => set_value('vemail'), 'class' => 'form-control', 'placeholder' => 'Email')); ?>
-																			<span class="error"> <?php echo form_error('vemail'); ?></span>
-																		</div>
+															</div>
+															<div class="col-lg-12 col-md-12">
+																<div class="row">
+																	<div class="form-group col-md-3"><label>Name of Project:</label></div>
+																	<div class="form-group col-md-9">
+																		<?= form_input(array('name' => 'vemail', 'value' => set_value('vemail'), 'class' => 'form-control', 'placeholder' => 'Email')); ?>
+																		<span class="error"> <?php echo form_error('vemail'); ?></span>
 																	</div>
 																</div>
-																
+															</div>
+																																												<div class="col-lg-12 col-md-12">
+																<div class="row">
+																	<div class="form-group col-md-3"><label>Bank Name:</label></div>
+																	<div class="form-group col-md-9">
+																		<?= form_input(array('name' => 'vemail', 'value' => set_value('vemail'), 'class' => 'form-control', 'placeholder' => 'Email')); ?>
+																		<span class="error"> <?php echo form_error('vemail'); ?></span>
+																	</div>
+																</div>
+															</div>
 																																												<div class="col-lg-12 col-md-12">
 																<div class="form-row">
 																	<div class="col-md-6 mb-3">
+																	<div class="col-md-12">
 																		<div class="row">
-																			<div class="form-group col-md-3"><label>Bank Name:</label></div>
-																			<div class="form-group col-md-9">
+																			<div class="form-group col-md-6"><label>Bank Account Number:</label></div>
+																			<div class="form-group col-md-6">
 																				<?= form_input(array('name' => 'vemail', 'value' => set_value('vemail'), 'class' => 'form-control', 'placeholder' => 'Email')); ?>
 																				<span class="error"> <?php echo form_error('vemail'); ?></span>
 																			</div>
-																		</div>
+																		</div></div>
 																	</div>
-																	<div class="col-md-3 mb-3">
+																	<div class="col-md-6 mb-3">
 																		<div class="row">
-																			<div class="form-group col-md-3"><label>Name of Project:</label></div>
-																			<div class="form-group col-md-9">
-																				<?= form_input(array('name' => 'vemail', 'value' => set_value('vemail'), 'class' => 'form-control', 'placeholder' => 'Email')); ?>
-																				<span class="error"> <?php echo form_error('vemail'); ?></span>
-																			</div>
-																		</div>
-																	</div>
-																	<div class="col-md-3 mb-3">
-																		<div class="row">
-																			<div class="form-group col-md-3"><label>Name of Project:</label></div>
-																			<div class="form-group col-md-9">
+																			<div class="form-group col-md-4"><label>Routing Number:</label></div>
+																			<div class="form-group col-md-8">
 																				<?= form_input(array('name' => 'vemail', 'value' => set_value('vemail'), 'class' => 'form-control', 'placeholder' => 'Email')); ?>
 																				<span class="error"> <?php echo form_error('vemail'); ?></span>
 																			</div>
@@ -141,15 +131,37 @@
 																	</div>
 																</div>
 															</div>
-														</div>
-														<div class="row">
-															<div class="col-lg-12 col-md-12"> 
-																<div class="form-group"> 
-																	<label for="exampleInputname">Address :</label> 
-																	<?= form_textarea(array('name' => 'vaddress', 'value' => set_value('vaddress'), 'placeholder' => 'Enter Address', 'colls' => '9', 'rows' => '4', 'class' => 'form-control')); ?>
-																	<span class="error"> <?php echo form_error('vaddress'); ?></span>
-																</div> 
+															<div class="col-lg-12 col-md-12">
+																<div class="form-row">
+																	<div class="col-md-6 mb-3">
+																		<div class="row">
+																			<div class="form-group col-md-6"><label>Company Bank Name:</label></div>
+																			<div class="form-group col-md-6">
+																				<?= form_input(array('name' => 'vemail', 'value' => set_value('vemail'), 'class' => 'form-control', 'placeholder' => 'Email')); ?>
+																				<span class="error"> <?php echo form_error('vemail'); ?></span>
+																			</div>
+																		</div>
+																	</div>
+																	<div class="col-md-6 mb-3">
+																		<div class="row">
+																			<div class="form-group col-md-4"><label>Cheque Number:</label></div>
+																			<div class="form-group col-md-8">
+																				<?= form_input(array('name' => 'vemail', 'value' => set_value('vemail'), 'class' => 'form-control', 'placeholder' => 'Email')); ?>
+																				<span class="error"> <?php echo form_error('vemail'); ?></span>
+																			</div>
+																		</div>
+																	</div>
+																</div>
 															</div>
+																																												<div class="col-lg-12 col-md-12">
+																<div class="row">
+																	<div class="form-group col-md-3"><label>Date:</label></div>
+																	<div class="form-group col-md-4">
+																		<input type="text" class="form-control" id="d_auto">
+																	</div>
+																</div>
+															</div>
+
 														</div>
 													</div>
 													<div class="col-lg-10 col-md-10">

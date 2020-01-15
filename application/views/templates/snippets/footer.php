@@ -72,5 +72,8 @@
 <script src="<?= base_url() ?>resources/bootstrap/assets/js/dropify.js"></script>
 <script src="<?= base_url() ?>resources/bootstrap/assets/js/dropify-demo.js"></script>
 
+<script src="<?= base_url() ?>resources/bootstrap/assets/plugins/bootstrap-datetimepicker/js/bootstrap-datepicker.min.js"></script>
+<script src="<?= base_url() ?>resources/bootstrap/assets/plugins/bootstrap-datetimepicker/js/ac-datepicker.js"></script>
+
 </body>
 </html>
