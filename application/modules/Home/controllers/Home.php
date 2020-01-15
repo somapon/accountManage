@@ -23,8 +23,7 @@ class Home extends MX_Controller
     {
 		
 		$this->data = array(
-			'head' => 'File Information',
-			'casecategory' => $this->option->getCaseCategory1(),
+			'head' => 'File Information'
 		);
 		
 		$this->template->write('title', 'Welcome to CMPDS', TRUE);
