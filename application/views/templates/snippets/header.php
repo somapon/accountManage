@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>Datta Able - Analytics dashboard</title>
+		<title>Voucher</title>
 
 
 		<!--[if lt IE 11]>
@@ -43,7 +43,7 @@
 				<div class="b-bg">
 				<i class="feather icon-trending-up"></i>
 				</div>
-				<span class="b-title">Datta Able</span>
+				<span class="b-title">Voucher</span>
 			</a>
 		</div>
 		<a class="mobile-menu" id="mobile-header" href="#!">

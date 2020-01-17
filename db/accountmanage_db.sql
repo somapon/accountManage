@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 15, 2020 at 08:09 PM
+-- Generation Time: Jan 17, 2020 at 07:42 PM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.11
 
@@ -96,7 +96,13 @@ INSERT INTO `menu_list` (`id`, `group_id`, `menu_order`, `parent_id`, `title`, `
 (11, '5', 1, 10, 'Account Head', 'Settings/account_head_list', 'fa fa-file-o', 'Active', '2020-01-15 16:49:52', NULL),
 (12, '5,6', 5, 0, 'Received', '#', 'feather icon-pocket', 'Active', '2020-01-15 15:24:34', '0000-00-00 00:00:00'),
 (13, '5', 1, 12, 'Received List', 'Received/received_list', 'fa fa-file-o', 'Active', '2020-01-15 16:49:52', NULL),
-(182, '5', 2, 12, 'Received Info.', 'Received/add_received', 'fa fa-file-o', 'Active', '2020-01-15 16:49:52', NULL);
+(14, '5', 2, 12, 'Received Info.', 'Received/add_received', 'fa fa-file-o', 'Active', '2020-01-15 16:49:52', NULL),
+(15, '5,6', 5, 0, 'Payment', '#', 'feather icon-pocket', 'Active', '2020-01-15 15:24:34', '0000-00-00 00:00:00'),
+(16, '5,6', 7, 0, 'Project', '#', 'feather icon-pocket', 'Active', '2020-01-15 15:24:34', '0000-00-00 00:00:00'),
+(17, '5', 1, 16, 'Project List', 'Project/project_list', 'fa fa-file-o', 'Active', '2020-01-15 16:49:52', NULL),
+(18, '5', 2, 16, 'New Project', 'Project/new_project', 'fa fa-file-o', 'Active', '2020-01-15 16:49:52', NULL),
+(19, '5', 1, 15, 'Payment List', 'Payment/payment_list', 'fa fa-file-o', 'Active', '2020-01-15 16:49:52', NULL),
+(188, '5', 2, 15, 'Payment Info.', 'Payment/add_payment', 'fa fa-file-o', 'Active', '2020-01-15 16:49:52', NULL);
 
 -- --------------------------------------------------------
 
@@ -131,7 +137,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `group_id`, `ip_address`, `username`, `password`, `salt`, `email`, `activation_code`, `forgotten_password_code`, `forgotten_password_time`, `remember_code`, `created_on`, `last_login`, `active`, `first_name`, `last_name`, `phone`, `create_by`, `image`) VALUES
-(78, 5, '103.15.141.22', 'faruq@quizhub.com', '$2y$08$ubAkdvlyuVOySSc6EsYia.HRI5gDxEDFyJwHtP/PjfQ3lBAmhQftu', NULL, 'faruq@quizhub.com', NULL, NULL, NULL, NULL, 1565368160, 1579105784, 1, 'Faruqe', 'Ahammad', '+0195221826', 74, '2019100609115478.jpeg'),
+(78, 5, '103.15.141.22', 'faruq@quizhub.com', '$2y$08$ubAkdvlyuVOySSc6EsYia.HRI5gDxEDFyJwHtP/PjfQ3lBAmhQftu', NULL, 'faruq@quizhub.com', NULL, NULL, NULL, NULL, 1565368160, 1579273619, 1, 'Faruqe', 'Ahammad', '+0195221826', 74, '2019100609115478.jpeg'),
 (81, 5, '118.100.129.26', 'faruqe2@quizhub.com', '$2y$08$Csg8qeNznSK8plcQsngNl.XuTasYXIuDdOGiZ5jfomxiAMrTrr7WC', NULL, 'faruqe2@quizhub.com', NULL, NULL, NULL, NULL, 1567630557, 1570286859, 1, 'Faruqe', 'Ahammad 2', '01952218262', 78, NULL),
 (94, 5, '103.210.18.52', 'admin@quizhub.com', '$2y$08$IIIVaXUNnVhLJYX95jmYGuCL9s4pt3LIseCqIa6N9DoXQy/OS07L2', NULL, 'admin@quizhub.com', NULL, NULL, NULL, NULL, 1570736895, 1575396918, 1, 'Admin', 'Admin', '', 78, NULL),
 (95, 5, '60.53.65.63', 'faruq2@quizhub.com', '$2y$08$NO/1IlCQs/G6mnV3.9OVwebMvunEzKEeGDMtenKjCw.2q1UIEjS8G', NULL, 'faruq2@quizhub.com', NULL, NULL, NULL, NULL, 1570809689, 1575764894, 1, 'Faruqe', 'Ahammad2', '01234564789', 78, NULL),
@@ -1874,6 +1880,20 @@ INSERT INTO `_007_clientinfo` (`id`, `ccodeNo`, `cname`, `cphone`, `cemail`, `ca
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `_007_projects`
+--
+
+CREATE TABLE `_007_projects` (
+  `id` int(11) NOT NULL,
+  `project_name` varchar(150) NOT NULL,
+  `description` mediumtext NOT NULL,
+  `start_date` varchar(20) NOT NULL,
+  `end_date` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `_007_vendorinfo`
 --
 
@@ -1944,9 +1964,9 @@ ALTER TABLE `_007_account_head`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `_007_clientinfo`
+-- Indexes for table `_007_projects`
 --
-ALTER TABLE `_007_clientinfo`
+ALTER TABLE `_007_projects`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -1969,7 +1989,7 @@ ALTER TABLE `groups`
 -- AUTO_INCREMENT for table `menu_list`
 --
 ALTER TABLE `menu_list`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=183;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=189;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -2002,10 +2022,10 @@ ALTER TABLE `_007_account_head`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `_007_clientinfo`
+-- AUTO_INCREMENT for table `_007_projects`
 --
-ALTER TABLE `_007_clientinfo`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+ALTER TABLE `_007_projects`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `_007_vendorinfo`

@@ -48,8 +48,8 @@
 					</div>
 					<button type="submit" class="btn btn-primary shadow-2 mb-4">Login</button>
 					<?php echo form_close();?>
-					<p class="mb-2 text-muted">Forgot password? <a class="text-white" href="auth-reset-password-v3.html">Reset</a></p>
-					<p class="mb-0 text-muted">Don’t have an account? <a class="text-white" href="auth-signup-v3.html">Signup</a></p>
+					<!--<p class="mb-2 text-muted">Forgot password? <a class="text-white" href="auth-reset-password-v3.html">Reset</a></p>
+					<p class="mb-0 text-muted">Don’t have an account? <a class="text-white" href="auth-signup-v3.html">Signup</a></p>-->
 				</div>
 			</div>
 		</div>

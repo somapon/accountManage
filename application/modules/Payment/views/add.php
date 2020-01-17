@@ -56,7 +56,7 @@
 															
 															<div class="col-lg-12 col-md-12">
 																<div class="row">
-																	<div class="form-group col-md-3"><label>Client Name:<span
+																	<div class="form-group col-md-3"><label>Vendor Name:<span
 																						style="color:red;">*</span></label></div>
 																	<div class="form-group col-md-9">
 																		<?= form_input(array('name' => 'vname', 'value' => set_value('vname'), 'class' => 'form-control', 'placeholder' => 'Vendor Name', 'required' => 'required')); ?>
@@ -68,11 +68,11 @@
 
 															<div class="col-lg-12 col-md-12">
 																<div class="row">
-																	<div class="form-group col-md-3"><label>Invoice Number:<span
+																	<div class="form-group col-md-3"><label>Address:<span
 																						style="color:red;">*</span></label></div>
 																	<div class="form-group col-md-4">
-																		<?= form_input(array('name' => 'vphone', 'value' => set_value('vphone'), 'class' => 'form-control', 'placeholder' => 'Phone', 'required' => 'required')); ?>
-																		<span class="error"> <?php echo form_error('vphone'); ?></span>
+																		<?= form_textarea(array('name' => 'caddress', 'value' => set_value('caddress'), 'placeholder' => 'Enter Address', 'colls' => '9', 'rows' => '4', 'class' => 'form-control')); ?>
+																		<span class="error"> <?php echo form_error('caddress'); ?></span>
 																	</div>
 																</div>
 															</div>
@@ -80,16 +80,38 @@
 																<div class="row">
 																	<div class="form-group col-md-3"><label>EBO Vendor Code:</label></div>
 																	<div class="form-group col-md-4">
-																		<?= form_input(array('name' => 'vemail', 'value' => set_value('vemail'), 'class' => 'form-control', 'placeholder' => 'Email')); ?>
+																		<?= form_input(array('name' => 'vemail', 'value' => set_value('vemail'), 'class' => 'form-control', 'placeholder' => 'EBO Vendor Code')); ?>
 																		<span class="error"> <?php echo form_error('vemail'); ?></span>
 																	</div>
 																</div>
+																																													<div class="form-row">
+																	<div class="col-md-6 mb-3">
+																	<div class="col-md-12">
+																		<div class="row">
+																			<div class="form-group col-md-6"><label>EBO Vendor Code:</label></div>
+																			<div class="form-group col-md-6">
+																				<?= form_input(array('name' => 'vemail', 'value' => set_value('vemail'), 'class' => 'form-control', 'placeholder' => 'EBO Vendor Code')); ?>
+																				<span class="error"> <?php echo form_error('vemail'); ?></span>
+																			</div>
+																		</div></div>
+																	</div>
+																	<div class="col-md-6 mb-3">
+																		<div class="row">
+																			<div class="form-group col-md-5"><label>Regisration Number:</label></div>
+																			<div class="form-group col-md-7">
+																				<?= form_input(array('name' => 'vemail', 'value' => set_value('vemail'), 'class' => 'form-control', 'placeholder' => 'Vendor registration Number')); ?>
+																				<span class="error"> <?php echo form_error('vemail'); ?></span>
+																			</div>
+																		</div>
+																	</div>
+																</div>
 															</div>
+															
 															<div class="col-lg-12 col-md-12">
 																<div class="row">
 																	<div class="form-group col-md-3"><label>Description:</label></div>
 																	<div class="form-group col-md-9">
-																		<?= form_input(array('name' => 'vemail', 'value' => set_value('vemail'), 'class' => 'form-control', 'placeholder' => 'Email')); ?>
+																		<?= form_input(array('name' => 'vemail', 'value' => set_value('vemail'), 'class' => 'form-control', 'placeholder' => 'Description')); ?>
 																		<span class="error"> <?php echo form_error('vemail'); ?></span>
 																	</div>
 																</div>
@@ -98,16 +120,16 @@
 																<div class="row">
 																	<div class="form-group col-md-3"><label>Name of Project:</label></div>
 																	<div class="form-group col-md-9">
-																		<?= form_input(array('name' => 'vemail', 'value' => set_value('vemail'), 'class' => 'form-control', 'placeholder' => 'Email')); ?>
+																		<?= form_input(array('name' => 'vemail', 'value' => set_value('vemail'), 'class' => 'form-control', 'placeholder' => 'Project name')); ?>
 																		<span class="error"> <?php echo form_error('vemail'); ?></span>
 																	</div>
 																</div>
 															</div>
 																																												<div class="col-lg-12 col-md-12">
 																<div class="row">
-																	<div class="form-group col-md-3"><label>Bank Name:</label></div>
+																	<div class="form-group col-md-3"><label>Vendor Bank Name:</label></div>
 																	<div class="form-group col-md-9">
-																		<?= form_input(array('name' => 'vemail', 'value' => set_value('vemail'), 'class' => 'form-control', 'placeholder' => 'Email')); ?>
+																		<?= form_input(array('name' => 'vemail', 'value' => set_value('vemail'), 'class' => 'form-control', 'placeholder' => 'bank Name')); ?>
 																		<span class="error"> <?php echo form_error('vemail'); ?></span>
 																	</div>
 																</div>
@@ -119,7 +141,7 @@
 																		<div class="row">
 																			<div class="form-group col-md-6"><label>Bank Account Number:</label></div>
 																			<div class="form-group col-md-6">
-																				<?= form_input(array('name' => 'vemail', 'value' => set_value('vemail'), 'class' => 'form-control', 'placeholder' => 'Email')); ?>
+																				<?= form_input(array('name' => 'vemail', 'value' => set_value('vemail'), 'class' => 'form-control', 'placeholder' => 'Bank Account Number')); ?>
 																				<span class="error"> <?php echo form_error('vemail'); ?></span>
 																			</div>
 																		</div></div>
@@ -128,7 +150,7 @@
 																		<div class="row">
 																			<div class="form-group col-md-4"><label>Routing Number:</label></div>
 																			<div class="form-group col-md-8">
-																				<?= form_input(array('name' => 'vemail', 'value' => set_value('vemail'), 'class' => 'form-control', 'placeholder' => 'Email')); ?>
+																				<?= form_input(array('name' => 'vemail', 'value' => set_value('vemail'), 'class' => 'form-control', 'placeholder' => 'Routing Number')); ?>
 																				<span class="error"> <?php echo form_error('vemail'); ?></span>
 																			</div>
 																		</div>
@@ -139,9 +161,9 @@
 																<div class="form-row">
 																	<div class="col-md-6 mb-3">
 																		<div class="row">
-																			<div class="form-group col-md-6"><label>Company Bank Name:</label></div>
+																			<div class="form-group col-md-6"><label>Payment Bank Name:</label></div>
 																			<div class="form-group col-md-6">
-																				<?= form_input(array('name' => 'vemail', 'value' => set_value('vemail'), 'class' => 'form-control', 'placeholder' => 'Email')); ?>
+																				<?= form_input(array('name' => 'vemail', 'value' => set_value('vemail'), 'class' => 'form-control', 'placeholder' => 'Bank Name')); ?>
 																				<span class="error"> <?php echo form_error('vemail'); ?></span>
 																			</div>
 																		</div>
@@ -158,10 +180,23 @@
 																</div>
 															</div>
 															<div class="col-lg-12 col-md-12">
-																<div class="row">
-																	<div class="form-group col-md-3"><label>Date:</label></div>
-																	<div class="form-group col-md-4">
-																		<input type="text" class="form-control" id="d_auto">
+																																													<div class="form-row">
+																	<div class="col-md-6 mb-3">
+																		<div class="row">
+																			<div class="form-group col-md-6"><label>Account Type:</label></div>
+																			<div class="form-group col-md-6">
+																				<?= form_input(array('name' => 'vemail', 'value' => set_value('vemail'), 'class' => 'form-control', 'placeholder' => 'Account Type')); ?>
+																				<span class="error"> <?php echo form_error('vemail'); ?></span>
+																			</div>
+																		</div>
+																	</div>
+																	<div class="col-md-6 mb-3">
+																		<div class="row">
+																			<div class="form-group col-md-4"><label>Date:</label></div>
+																			<div class="form-group col-md-6">
+																				<input type="text" class="form-control" id="d_auto">
+																			</div>
+																		</div>
 																	</div>
 																</div>
 															</div>
@@ -175,22 +210,37 @@
 																			<th rowspan="2" id="tableReceived">SL.</th>
 																			<th rowspan="2" id="tableReceived">Invoice Name</th>
 																			<th rowspan="2" id="tableReceived">Invoice Date</th>
-																			<th rowspan="2" id="tableReceived">Service Code</th>
 																			<th rowspan="2" id="tableReceived">Document Descriptions</th>
-																			<th rowspan="2" id="tableReceived">Project Code</th>
+																			<th colspan="2">CHARGE CODE NO</th>
 																			<th colspan="1">Bill Amount</th>
-																			<th colspan="1">Gross received</th>
+																			<th colspan="2"></th>
+																			<th colspan="1">TOTAL Expenses</th>
+																			<th colspan="4">LESS</th>
 																			<th colspan="2">Deducted</th>
-																			<th rowspan="2">NET Received</th>
+																			<th rowspan="2">NET  Payable</th>
+																			<th rowspan="6">Remarks</th>
 																		</tr>
 																		<tr>
+																			<th>PROJECT</th>
+																			<th>EXP. CODE</th>
 																			<th>IN TAKA</th>
+																			<th></th>
+																			<th></th>
 																			<th>IN TAKA</th>
+																			<th>VAT Rate</th>
+																			<th>VAT Amount</th>
+																			<th>Tax Rate</th>
+																			<th>TAX Amount</th>
 																			<th>VAT</th>
 																			<th>TAX</th>
 																		</tr>
-																		
-																																															<tr align="center" >
+																		<tr align="center" >
+																			<th></th>
+																			<th></th>
+																			<th></th>
+																			<th></th>
+																			<th></th>
+																			<th></th>
 																			<th></th>
 																			<th></th>
 																			<th></th>
@@ -215,8 +265,20 @@
 																			<th></th>
 																			<th></th>
 																			<th></th>
+																			<th></th>
+																			<th></th>
+																			<th></th>
+																			<th></th>
+																			<th></th>
+																			<th></th>
 																		</tr>
 																		<tr align="center" >
+																			<th></th>
+																			<th></th>
+																			<th></th>
+																			<th></th>
+																			<th></th>
+																			<th></th>
 																			<th></th>
 																			<th></th>
 																			<th></th>
@@ -230,11 +292,20 @@
 																			<th></th>
 																		</tr>
 																		<tr>
-																		<td colspan="8" class="text-center">TOTAL</td>
-																		<td></td>
-																		<td></td>
-																		<td></td>
-																		</tr>
+																		<td colspan="6" class="text-center">TOTAL</td>
+																			<td>100</td>
+																			<td></td>
+																			<td></td>
+																			<td>100</td>
+																			<td></td>
+																			<td>5</td>
+																			<td></td>
+																			<td>3</td>
+																			<td></td>
+																			<td></td>
+																			<td>92</td>
+																			
+																		</tr>											
 																	</tbody>
 
 																	
@@ -262,7 +333,7 @@
 												<div class="col-md-6">
 													<div class="col-lg-12 col-md-12">
 														<div class="row">
-															<div class="form-group col-md-5"><label> AR/NAR Number:<span
+															<div class="form-group col-md-5"><label>  AP/PJ Number:<span
 																				style="color:red;">*</span></label></div>
 															<div class="form-group col-md-7">
 																<?= form_input(array('name' => 'cname', 'value' => set_value('cname'), 'class' => 'form-control', 'placeholder' => '', 'required' => 'required')); ?>
@@ -288,7 +359,7 @@
 															<table class="table table-bordered">
 															  <tbody>
 																<tr>
-																  <td>Gross Received</td>
+																  <td>Expenses</td>
 																  <td>
 																	<?= form_input(array('name' => 'cemail', 'value' => set_value('cemail'), 'class' => 'form-control', 'placeholder' => '')); ?>
 																	<span class="error"> <?php echo form_error('cemail'); ?></span></td>
@@ -309,7 +380,7 @@
 																	</td>
 																</tr>
 																<tr>
-																	<td>Net Received</td>
+																	<td>Adjustment</td>
 																	<td>
 																														
 																		<?= form_input(array('name' => 'cemail', 'value' => set_value('cemail'), 'class' => 'form-control', 'placeholder' => '')); ?>
@@ -319,7 +390,7 @@
 																	</td>
 																</tr>
 																<tr>
-																	<td>Advance Deducted</td>
+																	<td>Diff</td>
 																	<td>													
 																		<?= form_input(array('name' => 'cemail', 'value' => set_value('cemail'), 'class' => 'form-control', 'placeholder' => '')); ?>
 																		<span class="error"> <?php echo form_error('cemail'); ?></span>
@@ -333,13 +404,20 @@
 												</div>
 											</div>
 										</div>
-										<div class="col-lg-12 col-md-12">
+										<div class="col-lg-12 col-md-12 mt-5">
 											<div class="row">
-												<div class="col-md-3">Received By</div>
+												<div class="col-md-3">Prepared By:</div>
 												<div class="col-md-3">Checked By</div>
-												<div class="col-md-3">Deposited By</div>
+												<div class="col-md-3">Approved By</div>
 												<div class="col-md-3">Approved By</div>
 											</div>
+										</div>
+										<div class="col-lg-8 col-md-7 offset-5 text-center mt-5">
+											
+												Received By<br/>
+												Date
+											
+										
 										</div>
 										<div class="row text-center">
 											<div class="col-lg-12 col-md-12">
