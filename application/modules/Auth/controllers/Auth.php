@@ -57,6 +57,7 @@ class Auth extends MX_Controller
 
     public function view_user($id = '')
     {
+		$this->data['head'] = "User Details (UD)";
         $this->data['details'] = $this->ion_auth_model->user_details($id);
         $this->data['id'] = $id;
         foreach ($this->data['details'] as $key => $company) {

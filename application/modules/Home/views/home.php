@@ -1,4 +1,4 @@
-<section class="header-user-list">
+<!--<section class="header-user-list">
 	<div class="h-list-header">
 		<div class="input-group">
 			<input type="text" id="search-friends" class="form-control" placeholder="Search Friend . . .">
@@ -155,7 +155,7 @@
 			</div>
 		</div>
 	</div>
-</section>
+</section>-->
 
 
 <section class="header-chat">
